@@ -1,0 +1,72 @@
+<form [formGroup]="this.myForm" class="form" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-12">
+            <label class="sr-only" for="numero">Numero</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-123"></i></div>
+                </div>
+                <input type="number" class="form-control" id="numero"
+                    placeholder="Numero de Tarjeta" formControlName="numero"
+                    [ngClass]="{
+                        'is-valid': f['numero'].valid && f['numero'].touched,
+                        'is-invalid': f['numero'].invalid && f['numero'].touched
+                    }"
+                    [readOnly]="bt_title === 'Actualizar' ? true : false"
+                    >
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="sr-only" for="nombre">Nombres</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-person"></i></div>
+                </div>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre de Tarjeta"
+                formControlName="nombre"
+                [ngClass]="{
+                    'is-valid': f['nombre'].valid && f['nombre'].touched,
+                    'is-invalid': f['nombre'].invalid && f['nombre'].touched
+                }">
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="sr-only" for="csv">CSV</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-123"></i></div>
+                </div>
+                <input type="password" maxlength="3" class="form-control" id="csv" placeholder="CSV"
+                formControlName="csv"
+                [ngClass]="{
+                    'is-valid': f['csv'].valid && f['csv'].touched,
+                    'is-invalid': f['csv'].invalid && f['csv'].touched
+                }">
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="sr-only" for="fecha">Fecha</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-calendar-date"></i></div>
+                </div>
+                <input type="month" class="form-control" id="fecha" placeholder="Fecha Expiración"
+                formControlName="fecha" mask="00/0000"
+                [ngClass]="{
+                    'is-valid': f['fecha'].valid && f['fecha'].touched,
+                    'is-invalid': f['fecha'].invalid && f['fecha'].touched
+                }">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn btn-info btn-lg btn-block mt-2" (click)="callCancel()"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+        </div>
+        <div class="col-6">
+            <button [disabled]="!myForm.valid" type="submit" class="btn btn-success btn-lg btn-block mt-2"><i class="bi bi-floppy-fill"></i> {{bt_title}}</button>
+        </div>
+    </div>
+
+</form>

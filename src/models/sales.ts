@@ -1,6 +1,8 @@
-export interface Tarjeta{
-    numero: string; 
-    nombre: string; 
-    csv: string; 
+export interface Sale{ //Venta en español
+    id: string; 
+    descripcion: string;
+    id_titular:string
+    titular: string;
+    monto: string; 
     fecha: string;
 }
