@@ -1,0 +1,8 @@
+[run]
+source = src/backend/app
+
+[report]
+omit =
+    **/__init__.py
+    **/tests/**
+    src/frontend/**
