@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from models.client import CustomerCreate, CustomerOut
+from backend.app.models.client import CustomerCreate, CustomerOut
 
 def test_customer_create_fields():
     customer = CustomerCreate(

@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from models.sale_product import SaleBillCreate, SaleBillOut
+from backend.app.models.sale_product import SaleBillCreate, SaleBillOut
 
 def test_sale_bill_create_fields():
     sale = SaleBillCreate(
