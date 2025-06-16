@@ -1,1 +1,1 @@
-# TalentoTech-MySalesAdministrator
+# MySalesAdministrator
