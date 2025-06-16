@@ -62,8 +62,5 @@ jobs:
         with:
           args: >
             -Dsonar.projectBaseDir=.
-            -Dsonar.projectKey=my-sales-administrator
-            -Dsonar.organization=my_sales_administrator
-            -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=**/__init__.py,**/tests/**,src/frontend/**
