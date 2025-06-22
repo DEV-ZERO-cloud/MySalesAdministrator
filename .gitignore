@@ -2,6 +2,7 @@
 .env/
 venv/
 .venv/
+.docs/
 data.db
 storage.json
 __pycache__

@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import json
 
 class CostosDirectos:
@@ -22,7 +23,7 @@ class CostosDirectos:
                 self.costos_dict.setdefault("2024", {})[id_publicacion] = costo_2024
 
         # Exportar a JSON
-        with open("./ver2/storage/costos_historicos.json", "w", encoding="utf-8") as f:
+        with open(os.getenv("DIR_COSTOS_HISTORICOS"), "w", encoding="utf-8") as f:
             json.dump(self.costos_dict, f, indent=4, ensure_ascii=False)
 
         print("Exportación completa desde hoja:", hoja)
