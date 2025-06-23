@@ -3,7 +3,7 @@
 venv/
 .venv/
 .docs/
-.src/backend/app/services/inventory_management/db
+.src/backend/app/services/inventory_management/db/
 data.db
 storage.json
 __pycache__
@@ -12,4 +12,3 @@ coverage.xml
 .idea
 .env
 .pyc
-src/backend/app/tests/api/flutter/
