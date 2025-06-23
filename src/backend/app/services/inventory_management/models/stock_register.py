@@ -1,15 +1,17 @@
 from pydantic import BaseModel
+from backend.app.services.inventory_management.models.product_movements import ProductMovement
+from typing import List
 
 class StockRegisterCreate(BaseModel):
     __entity_name__ = "RegistroTransaccion"
-    id: int  # ID
-    date: str  # Fecha
-    id_store_start: str  # ID Bodega Origen
-    id_store_end: str    # ID Bodega Destino
-    id_product: str      # ID Producto
-    quantity: int        # Cantidad
+    id: int
+    date: str
+    id_store_start: str
+    id_store_end: str
+    products: List[ProductMovement]
 
     def to_dict(self):
+        # Puedes adaptar esto para serializar la lista de productos si lo necesitas
         return self.model_dump()
 
     @classmethod
@@ -19,8 +21,6 @@ class StockRegisterCreate(BaseModel):
             "Fecha": "VARCHAR",
             "IDBodegaOrigen": "VARCHAR",
             "IDBodegaDestino": "VARCHAR",
-            "IDProducto": "VARCHAR",
-            "Cantidad": "INTEGER"
         }
 
 class StockRegisterOut(StockRegisterCreate):

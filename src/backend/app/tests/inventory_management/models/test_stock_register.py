@@ -1,5 +1,5 @@
 import pytest
-from stock_register_model import StockRegisterCreate, StockRegisterOut
+from backend.app.services.inventory_management.models.stock_register import StockRegisterCreate, StockRegisterOut
 
 def test_stock_register_create_to_dict():
     reg = StockRegisterCreate(
