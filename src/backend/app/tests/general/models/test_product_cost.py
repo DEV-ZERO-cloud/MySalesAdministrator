@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from backend.app.models.product_cost import ProductCostCreate, ProductCostOut
+from backend.app.services.general.models.product_cost import ProductCostCreate, ProductCostOut
 
 def test_product_cost_create_fields():
     product = ProductCostCreate(
