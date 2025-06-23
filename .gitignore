@@ -3,6 +3,7 @@
 venv/
 .venv/
 .docs/
+.src/backend/app/services/inventory_management/db
 data.db
 storage.json
 __pycache__
